@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ses Dosyası Yükle ve Tahmin Al</title>
+  <style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e6e6fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+  }
+
+  .container {
+    background: #fff;
+    margin-top: 120px;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+  }
+
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  input[type="file"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  button {
+    background-color: #967bb6;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  h3 {
+    margin-top: 30px;
+    color: #444;
+  }
+
+  pre {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', Courier, monospace;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+      <h2>Ses Dosyası Yükle</h2>
+      <input type="file" id="fileInput" accept=".wav" />
+      <button onclick="uploadFile()">Yükle ve Tahmin Al</button>
+
+      <h3>Sonuç:</h3>
+      <pre id="result"></pre>
+
+      <script>
+        function uploadFile() {
+          const fileInput = document.getElementById('fileInput');
+          const file = fileInput.files[0];
+          if (!file) {
+            alert("Lütfen bir .wav dosyası seçin!");
+            return;
+          }
+
+          const formData = new FormData();
+          formData.append('file', file);
+
+          fetch('http://127.0.0.1:5000/predict', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+          })
+          .catch(error => {
+            document.getElementById('result').textContent = 'İstek hatası: ' + error;
+          });
+        }
+      </script>
+  </div>
+</body>
+</html>
