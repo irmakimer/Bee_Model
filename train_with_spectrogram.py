@@ -106,10 +106,10 @@ def train_model(df, model_path):
 
 
 # Klasörler
-bee_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Bee_Or_No\Bee'
-no_bee_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Bee_Or_No\No_Bee'
-queen_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Testing\Var'
-no_queen_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Testing\Yok'
+bee_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Train_Verileri\Bee_Or_No\Bee'
+no_bee_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Train_Verileri\Bee_Or_No\No_Bee'
+queen_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Train_Verileri\Queen_Or_No\Var'
+no_queen_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Train_Verileri\Queen_Or_No\Yok'
 
 # Özellik adları (dinamik üret)
 feature_names = (
@@ -140,12 +140,11 @@ df_bee.to_csv("bee_features.csv", index=False, encoding="utf-8")
 df_queen.to_csv("queen_features.csv", index=False, encoding="utf-8")
 
 
-
-
+#---------------Spektrogram çizimi---------------------
 
 # Klasör yolu (örneğin: "C:/Users/KullanıcıAdı/Masaüstü/wav_dosyalarım")
-input_folder = r"C:\Users\Lenovo\OneDrive\Masaüstü\Test"  # WAV dosyalarının bulunduğu klasör
-output_folder = r"C:\Users\Lenovo\OneDrive\Masaüstü\spektrogramlar_yeni_modelli"  # Spektrogramların kaydedileceği klasör
+input_folder = r"C:\Users\Lenovo\OneDrive\Masaüstü\Test_Verileri"  # WAV dosyalarının bulunduğu klasör
+output_folder = r"C:\Users\Lenovo\OneDrive\Masaüstü\spektrogram"  # Spektrogramların kaydedileceği klasör
 
 # Çıkış klasörü yoksa oluştur
 os.makedirs(output_folder, exist_ok=True)
@@ -174,3 +173,4 @@ for filename in os.listdir(input_folder):
         plt.close()
 
 print("0-1000 Hz aralığında spektrogramlar oluşturuldu.")
+
