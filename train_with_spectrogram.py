@@ -173,9 +173,3 @@ for filename in os.listdir(input_folder):
         plt.close()
 
 print("0-1000 Hz aralığında spektrogramlar oluşturuldu.")
-
-
-
-
-        
-
