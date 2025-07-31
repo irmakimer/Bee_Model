@@ -47,7 +47,7 @@ bee_model = joblib.load("bee_detector.pkl")
 queen_model = joblib.load("queen_detector.pkl")
 
 # Test klasörü
-test_klasoru = r"C:\Users\Lenovo\OneDrive\Masaüstü\Test_Verileri"
+test_klasoru = r"C:\Users\Lenovo\OneDrive\Masaüstü\proje\Bee_Sound\Data\Test_Verileri"
 
 true_bee_labels = []
 pred_bee_labels = []
