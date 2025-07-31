@@ -105,10 +105,10 @@ def train_model(df, model_path):
 
 
 # Klasörler
-bee_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Bee_Or_No\Bee'
-no_bee_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Bee_Or_No\No_Bee'
-queen_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Testing\Var'
-no_queen_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Testing\Yok'
+bee_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Train_Verileri\Bee_Or_No\Bee'
+no_bee_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Train_Verileri\Bee_Or_No\No_Bee'
+queen_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Train_Verileri\Queen_Or_No\Var'
+no_queen_path = r'C:\Users\Lenovo\OneDrive\Masaüstü\Train_Verileri\Queen_Or_No\Yok'
 
 # Özellik adları (dinamik üret)
 feature_names = (
