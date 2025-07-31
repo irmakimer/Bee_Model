@@ -4,7 +4,7 @@ import librosa
 import numpy as np
 import pandas as pd
 import joblib
-import matplotlib.plot as plt
+import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score, f1_score, precision_score, recall_score
