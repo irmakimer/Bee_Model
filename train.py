@@ -1,4 +1,4 @@
-# train_models.py
+# train.py
 import os
 import librosa
 import numpy as np
