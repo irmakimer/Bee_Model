@@ -86,8 +86,8 @@ def train_model(df, model_path):
     # Test seti üzerindeki başarıyı ölç
     y_pred = model.predict(X_test)
 
-    print(f"\n📦 Model adı: {model_path}")
-    print("🎯 Test Seti Performansı:")
+    print(f"\n Model adı: {model_path}")
+    print(" Test Seti Performansı:")
     print("- Doğruluk (Accuracy):", round(accuracy_score(y_test, y_pred), 4))
     
     # Etiket türüne göre uygun ortalama türünü belirle
@@ -97,7 +97,7 @@ def train_model(df, model_path):
     print("- Precision:", round(precision_score(y_test, y_pred, average=average_type), 4))
     print("- Recall:", round(recall_score(y_test, y_pred, average=average_type), 4))
 
-    print("\n📊 Sınıf Bazlı Detaylı Rapor:\n")
+    print("\n Sınıf Bazlı Detaylı Rapor:\n")
     target_names = ['Yok', 'Var'] if sorted(y.unique()) == [0, 1] else ['No_Bee', 'Bee']
     print(classification_report(y_test, y_pred, target_names=target_names))
 
